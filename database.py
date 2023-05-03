@@ -21,3 +21,15 @@ def load_jobs_form_db():
     for row in result.all():
       jobs.append(row._mapping)
     return jobs
+
+
+def load_job_by_id(idx):
+  with engine.connect() as connection:
+    result = connection.execute(text("select * from jobs where id = :val"),dict(val=idx))
+    rows = result.all()
+    if(len(rows) == 0):
+      return None
+    else:
+      return rows[0]._mapping
+    
+    
