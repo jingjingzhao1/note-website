@@ -5,21 +5,27 @@ app = Flask(__name__)
 JOBS = [
   {
     'id':1,
-    'title':'title',
-    'location':'location',
-    'salary':'$$$$'
+    'title':'Web Developer',
+    'location':'Remote',
+    'salary':'Up to $80,000 a year - Full-time'
   },
   {
     'id':2,
-    'title':'title2',
-    'location':'location2',
-    'salary':'$$$$2'
+    'title':'Software Engineer/Developer (Desktop)',
+    'location':'Portland OR',
+    'salary':'$73,983 - $166,365 a year - Full-time'
   },
   {
     'id':3,
-    'title':'title3',
-    'location':'location3',
-    'salary':'$$$$3'
+    'title':'Remote Software Support Engineer',
+    'location':'Remote',
+    'salary':'$83,000 - $115,000 a year'
+  },
+  {
+    'id':4,
+    'title':'Principal Engineer or Senior Principal Engineer Software - DevOps',
+    'location':'El Segundo, CA',
+    'salary':''
   }
 
 ]
