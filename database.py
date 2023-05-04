@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine,text
+from sqlalchemy import create_engine,text,insert
 import os
 
 db_connect_info = os.environ['DB_CON_STR']
@@ -32,4 +32,18 @@ def load_job_by_id(idx):
     else:
       return rows[0]._mapping
     
-    
+
+def add_appl_to_job(job_id,data):
+   with engine.connect() as connection:
+    query = text("insert into applications(job_id,full_name,email,experience) values(:job_id,:full_name,:email,:experience)")
+
+    connection.execute(query,
+                       {
+                         'job_id':job_id,
+                         'full_name':data['full_name'],
+                         'email':data['email'],
+                         'experience':data['experience']
+                       })
+                       
+
+                               

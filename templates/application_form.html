@@ -1,0 +1,18 @@
+<form action="/job/{{job['id']}}/apply" method="post">
+  <h4>Application Form</h4>
+  <div class="mb-3">
+  
+      <label class="form-label">Name: </label>
+      <input type="text" name="full_name" class="form-control">
+      
+      <label class="form-label">Email: </label>
+      <input type="email" name="email" class="form-control" >
+
+      <label class="form-label">Experience: </label>
+      <textarea type="text" name="experience" class="form-control">
+      </textarea>
+      
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

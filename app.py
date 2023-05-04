@@ -1,5 +1,5 @@
-from flask import Flask,render_template,jsonify
-from database import load_jobs_form_db, load_job_by_id
+from flask import Flask,render_template,jsonify,request
+from database import load_jobs_form_db, load_job_by_id, add_appl_to_job
 
 app = Flask(__name__)
 
@@ -20,6 +20,11 @@ def show_job(id):
     return "Not Found",404
   return render_template('jobpage.html',job=job)
 
+@app.route("/job/<id>/apply",methods=["post"])
+def apply_to_job(id):
+  data = request.form
+  add_appl_to_job(id,data)
+  return render_template('application_submit.html',application=data)
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0',debug=True)
